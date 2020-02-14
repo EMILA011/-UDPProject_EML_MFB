@@ -61,7 +61,7 @@ public class UDPServer {
 	
 	private void service() throws IOException {
 		
-		byte[] bb = new byte[1024];
+		byte[] bb = new byte[65535];
 		
 		DatagramPacket dp = null;
 		
@@ -106,6 +106,10 @@ public class UDPServer {
         	   System.out.println("Request Received from " + dp.getAddress().getHostAddress() + ": " + dp.getPort() + " " + dtf2.format(now));
              
           }
+            
+            
+         // Clear the buffer after every message. 
+            bb = new byte[65535];
             
         }//while 
         
@@ -164,3 +168,4 @@ public class UDPServer {
 	
 	
 }//UDPServer
+
