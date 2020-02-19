@@ -104,8 +104,10 @@ public class UDPServer {
             	DatagramPacket dp2 = new DatagramPacket(bbb, bbb.length,clientAddress,clientPort);
             	ds.send(dp2);
           
-           }   
-           
+           }  
+		
+           //If the user enters <REQUESTQUOTE>, send a random quote.  
+		
            else if (builder.toString().equals("<REQUESTQUOTE>")){
         	   
         	   String quote = getRandomQuote();
